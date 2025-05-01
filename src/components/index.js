@@ -8,7 +8,7 @@ import RTE from "./RTE";
 import Signup from "./Signup";
 import Login from "./Login";
 import Button from "./Button";
-import PostCard from "./postcard";
+import PostCard from "./PostCard"
 import AuthLayout from "./AuthLayout";
 import Input from "./Input";
 import PostForm from "./post-form/postform";
