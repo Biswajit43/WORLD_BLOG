@@ -5,9 +5,66 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4922/4922057.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Blogs</title>
+    <style>
+      #chatbotButton {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #0ea5e9;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+      }
+
+      #chatbotContainer {
+        display: none;
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 400px;
+        height: 600px;
+        z-index: 9998;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      }
+    </style>
   </head>
   <body class="bg-gray-600 text-white">
-    <div id="root" ></div>
+    <div id="root"></div>
+
+    <!-- Chatbot iframe (hidden until opened) -->
+    <iframe
+      id="chatbotContainer"
+      src="https://denser.ai/u/embed/19ca09eb-859f-41e7-b573-1a19a6bae193"
+    ></iframe>
+
+    <!-- Floating button -->
+    <button id="chatbotButton" title="Chat">
+      💬
+    </button>
+
+    <script>
+      const button = document.getElementById("chatbotButton");
+      const container = document.getElementById("chatbotContainer");
+
+      button.addEventListener("click", () => {
+        container.style.display =
+          container.style.display === "none" ? "block" : "none";
+      });
+    </script>
+
+    <!-- React or main app file -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
