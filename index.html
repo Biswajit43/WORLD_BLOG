@@ -43,28 +43,32 @@
   <body class="bg-gray-600 text-white">
     <div id="root"></div>
 
-    <!-- Chatbot iframe (hidden until opened) -->
-    <iframe
-      id="chatbotContainer"
-      src="https://denser.ai/u/embed/19ca09eb-859f-41e7-b573-1a19a6bae193"
-    ></iframe>
+    <!-- ✅ Chatbot container with Chatbase iframe -->
+    <div id="chatbotContainer">
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/pk8OBbVKHiB1qWSuKnZDm"
+        width="100%"
+        height="100%"
+        frameborder="0"
+      ></iframe>
+    </div>
 
-    <!-- Floating button -->
+    <!-- Floating Chat Button -->
     <button id="chatbotButton" title="Chat">
       💬
     </button>
 
+    <!-- Toggle Chatbot Container -->
     <script>
       const button = document.getElementById("chatbotButton");
       const container = document.getElementById("chatbotContainer");
 
       button.addEventListener("click", () => {
-        container.style.display =
-          container.style.display === "none" ? "block" : "none";
+        container.style.display = container.style.display === "none" ? "block" : "none";
       });
     </script>
 
-    <!-- React or main app file -->
+    <!-- React app -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
