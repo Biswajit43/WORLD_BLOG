@@ -1,27 +1,28 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
-export default function TestEditor() {
+export default function App() {
   return (
-    <div className="p-4">
-      <Editor
-        apiKey="ubnppqs8x4kquhtl4m6wgcw63z09hd7ed7x0lmasqb5zai9i"  // Ensure this key is valid
-        init={{
-          height: 400,
-          menubar: true,
-          plugins: [
-            "advlist", "autolink", "lists", "link", "image",
-            "charmap", "preview", "anchor", "searchreplace",
-            "visualblocks", "code", "fullscreen", "insertdatetime",
-            "media", "table", "help", "wordcount"
-          ],
-          toolbar:
-            "undo redo | formatselect | bold italic backcolor | \
-            alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help",
-          content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-        }}
-      />
-    </div>
+    <Editor
+      apiKey='y4z8wxp19uukh8o4y5kkjq90mpa6ija6jexo8xkqeu4xb2eu'
+      init={{
+        plugins: [
+          // Core editing features
+          'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+          // Your account includes a free trial of TinyMCE premium features
+          // Try the most popular premium features until May 15, 2025:
+          'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
+        ],
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+          { value: 'First.Name', title: 'First Name' },
+          { value: 'Email', title: 'Email' },
+        ],
+        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+      }}
+      initialValue="Welcome to My Website"
+    />
   );
 }
