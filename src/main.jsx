@@ -14,7 +14,7 @@ import EditPost from "./pages/EditPost.jsx";
 
 import Post from "./pages/Post";
 
-import AllPosts from './pages/Allpost.jsx'
+import AllPosts from './pages/AllPost.jsx'
 import Feedback from './pages/Feedback.jsx'
 
 const router = createBrowserRouter([
